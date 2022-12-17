@@ -1,6 +1,6 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
-const htmlFile = require('./mockup');
+const htmlFile = require('./src/mockup');
 
 
 // //function to start engineer
