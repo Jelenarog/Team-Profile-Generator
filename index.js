@@ -141,29 +141,9 @@ function init() {
    .then((answers) =>{
        const manager = new Manager (answers.name, answers.id, answers.email, answers.officeNumber);
     team.push(manager);
-
    console.log(team);
     addMembers();
-//    inquirer
-//     .prompt([
-//             {
-//                 type: "list",
-//                 message: "Which type of team member would you like to add?",
-//                 name: "employee",
-//                 choices: ["Manager","Engineer", "Intern",'i do not want to add more employees']
-//             },
-//         ])
-//         .then((answers) =>{
-//             console.log(answers);
-//         })
-
-    // const htmlContent = htmlFile.indexHtml(answers)
-    // fs.writeFile('index.html', htmlContent, (err) =>
-    // err ? console.error(err) : console.log('Success!')
-    //    );
     }
-   
     );
-   
 }
 init();

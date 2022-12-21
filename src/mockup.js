@@ -8,15 +8,11 @@ const createManagerCard = (manager) => {
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${manager.id}</li>
-                <li class="list-group-item">Email: <a href='#'>${
-                  manager.email
-                }</a></li>
-                <li class="list-group-item">Office number: ${
-                  manager.officeNumber
-                }</li>
+                <li class="list-group-item">Email: <a href="mailto:${manager.email}">${manager.email}</a></li>
+                <li class="list-group-item">Office number: ${manager.officeNumber}</li>
               </ul>
             </div>
-         </div>`;
+         </div>`
  
 };
 
@@ -29,8 +25,8 @@ return ` <div class="col-sm-4">
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">ID:${engineer.id}</li>
-    <li class="list-group-item">Email:${engineer.email}</li>
-    <li class="list-group-item">Github:${engineer.github}</li>
+    <li class="list-group-item">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
+    <li class="list-group-item">Github:<a href = https://github.com/${engineer.github} target="_blank">${engineer.github}</a></li>
   </ul>
 </div>
 </div>`
@@ -45,7 +41,7 @@ const createInternCard = (intern) =>{
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">ID:${intern.id}</li>
-      <li class="list-group-item">Email:${intern.email}</li>
+      <li class="list-group-item">Email: <a href="mailto${intern.email}">${intern.email}</a></li>
       <li class="list-group-item">School:${intern.school}</li>
     </ul>
   </div>
