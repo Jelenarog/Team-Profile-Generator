@@ -1,12 +1,14 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 const indexHtml = require('./src/mockup');
+//import classes
 const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-const team = [];
+const team = []; // empty array where all answers/employees will be saved
 
+// add intern function add prompt questions for Engineer
 function addIntern(){
     inquirer
     .prompt([
@@ -36,12 +38,10 @@ function addIntern(){
 
         const intern= new Intern (answers.name, answers.id, answers.email, answers.school);
         team.push(intern);
-        console.log("Adding intern")
-        console.log(team)
         addMembers();
 })}
 
-
+// add engineer function add prompt questions for Engineer
 function addEngineer(){
     inquirer
     .prompt([
@@ -70,11 +70,9 @@ function addEngineer(){
     .then((answers) =>{
         const engineer = new Engineer (answers.name, answers.id, answers.email, answers.github);
         team.push(engineer);
-        console.log("Added engineer")
-        console.log(team)
         addMembers();
 })}
-
+//function to add different members of employees to the team
 function addMembers () {
     inquirer
     .prompt([
@@ -87,7 +85,6 @@ function addMembers () {
         ])
     
         .then(({action})=>{
-            console.log(action)
             if (action === 'Engineer'){
                addEngineer();
             
@@ -96,8 +93,6 @@ function addMembers () {
                 addIntern();
              }
              else{
-                console.log("Our final team")
-                console.log(team)
                 const htmlContent = indexHtml(team)
                 fs.writeFile('index.html', htmlContent, (err) =>
                  err ? console.error(err) : console.log('Success!')
@@ -108,11 +103,9 @@ function addMembers () {
         });
     }
 
-// //function to start building team
+// INIT function to start building team
 function init() {
-   
     console.log("Please build your team.");
-
     inquirer
     .prompt([
             {
@@ -141,7 +134,6 @@ function init() {
    .then((answers) =>{
        const manager = new Manager (answers.name, answers.id, answers.email, answers.officeNumber);
     team.push(manager);
-   console.log(team);
     addMembers();
     }
     );

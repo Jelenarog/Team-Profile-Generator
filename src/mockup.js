@@ -1,3 +1,6 @@
+//Mockup HTML file//
+
+//function that creates all HTML cards for Manager
 const createManagerCard = (manager) => {
   return`
   <div class="col-sm-4">
@@ -15,7 +18,7 @@ const createManagerCard = (manager) => {
          </div>`
  
 };
-
+//function that creates all HTML cards for Engineer
 const createEngineerCard = (engineer) =>{
 return ` <div class="col-sm-4">
 <div class="card bg-dark text-light" style="width: 16rem;">
@@ -32,6 +35,7 @@ return ` <div class="col-sm-4">
 </div>`
 
 };
+//function that creates all HTML cards for Intern
 const createInternCard = (intern) =>{
   return ` <div class="col-sm-4">
   <div class="card bg-dark text-light" style="width: 16rem;">
@@ -50,11 +54,8 @@ const createInternCard = (intern) =>{
   };
 //Function to create HTML file
 const indexHtml = (team) => {
-  console.log("In my indexHTML function")
-  console.log(team);
   var managerCard = createManagerCard(team[0]);
   team.shift()
-  console.log(team)
   employeeCards = ""
   for (const member of team) {
     if(member.getRole() === "Engineer"){
