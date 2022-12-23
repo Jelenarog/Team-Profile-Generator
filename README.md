@@ -26,7 +26,7 @@ This application is covered under MIT, to find more information about it click o
 
 # Tests 
 
-The following is needed to run the rest:
+The following is needed to run the application:
 
 #### node index.js
 # Questions 
